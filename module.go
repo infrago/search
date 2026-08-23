@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/infrago/infra"
 	. "github.com/infrago/base"
+	"github.com/infrago/infra"
 	"github.com/infrago/util"
 )
 
@@ -252,7 +252,7 @@ func (m *Module) Open() {
 }
 
 func (m *Module) Start() {
-	fmt.Printf("infrago search module is running with %d connections.\n", len(m.instances))
+	infra.Log(infra.LogLevelInfo, "search", "module started", Map{"connections": len(m.instances)})
 }
 
 func (m *Module) Stop() {}
